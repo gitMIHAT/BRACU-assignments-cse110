@@ -1,0 +1,336 @@
+/* 1. Write a Java code that would print the following sequences using while/for loop:
+a)  24, 18, 12, 6, 0, -6
+b)  18, -27, 36, -45, 54, -63 */
+
+public class Task1{
+    public static void main(String[] args) {
+        System.out.println("Sequence a:");
+        for (int i = 24; i >= -6; i -= 6) {
+           System.out.print(i + " ");
+        }
+         System.out.println();
+         System.out.println("Sequence b:");
+         for (int i = 18; i <= 63; i += 9) {
+             if (i % 2 == 0) {
+                 System.out.print(i + " ");
+            }  else  {
+                 System.out.print(-i + " ");
+            }
+        }
+    }
+}
+
+/*2.Write a Java program that will take N numbers from
+* the user and find their sum and average using a for loop. */
+import java.util.Scanner;
+public class Task2{
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the number of elements (N): ");
+        int N_numbers = scanner.nextInt();
+        int sum = 0;
+        System.out.println("Input the " + N_numbers + " numbers: ");
+        for (int i = 0; i < N_numbers; i++) {
+            int num = scanner.nextInt();
+            sum += num;
+        }
+        double average = (double) sum / N_numbers;
+        System.out.println("The sum of " + N_numbers + " no is: " + sum);
+        System.out.println("The Average is: " + average);
+    }
+}
+
+/*3. Write a Java program which adds all numbers
+ * that are multiples of both 7 and 9 up to 600. [Ans: 2835] */
+
+public class Task3{
+    public static void main(String[] args) {
+        int sum = 0;
+        for (int i = 1; i <= 600; i++) {
+             if (i % 7 == 0 && i % 9 == 0) sum += i;
+        }
+         System.out.println("Sum of multiples of both 7 and 9 up to 600: " + sum);
+    }
+}
+
+/*4. Write a Java program whi h adds all numbers that are multiples of either 7 or 9 or both up to 600.
+ * Ensure that numbers like 63 are added only once in the sum. [Ans: 42649] */
+public class Task4 {
+    public static void main(String[] args) {
+        int sum = 0;
+        for (int i = 1; i <= 600; i++) {
+            if (i % 7 == 0 || i % 9 == 0) sum += i;
+        }
+        System.out.println("Sum of multiples of 7 or 9 up to 600: " + sum);
+    }
+}
+
+/* 5. Write a Java program which adds all numbers that are multiples
+ of either 7 or 9 but not both, up to 600. Use only a single loop in your program. [Ans: 39814] */
+public class Task5 {
+    public static void main(String[] args) {
+        int sum = 0;
+        for (int i = 1; i <= 600; i++) {
+            if ((i % 7 == 0 || i % 9 == 0) && !(i % 7 == 0 && i % 9 == 0)) sum += i;
+        }
+        System.out.println("Sum of multiples of 7 or 9 but not both up to 600: " + sum);
+    }
+}
+
+/*6. Write a Java program that will calculate the value of y where the expression of y is as follows :
+*y = 12 − 22 + 32 − 42 + 52.........+ n2 */
+import java.util.Scanner;
+public class CalculateY {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the value of n: ");
+        int n = scanner.nextInt();
+        int y = 0;
+        for (int i = 1; i <= n; i++) {
+            if (i % 2 != 0) {
+                y += i * i;
+            } else {
+                y -= i * i;
+            }
+        }
+        System.out.println("The value of y is: " + y);
+    }
+}
+
+
+/*7. Write a Java program that will take a positive integer n 
+ * as input and print all the numbers from 0 to n which are divisible by 5 but not divisible by 3.*/
+import java.util.Scanner;
+public class Task7 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a positive integer n: ");
+        int n = scanner.nextInt();
+        for (int i = 0; i <= n; i++) {
+            if (i % 5 == 0 && i % 3 != 0) {
+                System.out.println(i);
+            }
+        }
+    }
+}
+
+/*8. Write a Java program that will keep taking integer numbers as inputs
+ * from the user and print the square of those numbers until it gets a negative number and then stop. */
+import java.util.Scanner;
+public class Task8 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        while (true) {
+            System.out.print("Enter Number: ");
+            int number = scanner.nextInt();
+            if (number < 0) {
+                break;
+            }
+            System.out.println(number + " ^ 2 = " + (number * number));
+        }
+    }
+}
+
+/*9. Write a Java code that asks an integer as input from the user 
+ *and takes that many integer inputs. Your task is to count how many numbers are non-negative and negative. */
+import java.util.Scanner;
+
+public class Task9{
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter an integer: ");
+        int n = scanner.nextInt();
+
+        int nonNegativeCount = 0;
+        int negativeCount = 0;
+
+        for (int i = 1; i <= n; i++) {
+            System.out.print("Enter number " + i + ": ");
+            int number = scanner.nextInt();
+            if (number >= 0) {
+                nonNegativeCount++;
+            } else {
+                negativeCount++;
+            }
+        }
+
+        System.out.println("Non-negative numbers: " + nonNegativeCount);
+        System.out.println("Negative numbers: " + negativeCount);
+    }
+}
+
+/*10. Write a Java program that displays the sum of first n odd natural numbers. */
+
+import java.util.Scanner;
+public class Task10 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Input number of terms: ");
+        int n = scanner.nextInt();
+        
+        int sum = 0;
+        int count = 1;
+        
+        System.out.println("The odd numbers are:");
+        
+        for (int i = 1; count <= n; i += 2) {
+            System.out.println(i);
+            sum += i;
+            count++;
+        }
+        System.out.println("The Sum of odd Natural Numbers up to " + n + " terms is: " + sum);
+    }
+}
+
+/* 11. Write a Java program that will read 10 numbers from the user, and then print the first number,
+ * the sum of the first 2 numbers, the first 3 numbers, and so on up to the sum of 10 numbers.   */
+
+import java.util.Scanner;
+
+public class task11 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int sum = 0;
+
+        for (int i = 1; i <= 10; i++) {
+            System.out.print("Enter Number: ");
+            int number = scanner.nextInt();
+            sum += number;
+            System.out.println("Sum = " + sum);
+        }
+    }
+}
+
+/* 12. Write a Java program that will take an integer as input and print all the divisors of that number.  */
+
+import java.util.Scanner;
+
+public class Task12{
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter an integer: ");
+        int n = scanner.nextInt();
+        
+        System.out.println("Divisors of " + n + ":");
+        for (int i = 1; i <= n; i++) {
+            if (n % i == 0) {
+                System.out.println(i);
+            }
+        }
+    }
+}
+
+/*13. Write a program in Java that asks the user for an integer input and counts the number of digits in the number. */
+import java.util.Scanner;
+
+public class Task13 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);       
+        System.out.print("Enter an integer: ");
+        int number = scanner.nextInt();
+        int count = 0;   
+        if (number == 0) {
+            count = 1;
+        } else {
+            while (number != 0) {
+                number /= 10;
+                count++;
+            }
+        }        
+        System.out.println("The number of digits is: " + count);
+    }
+}
+
+/* 14. Write a program in Java that prints the individual digits of an integer number (user input) backward (From right to left).*/
+import java.util.Scanner;
+
+public class Task14 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter an integer: ");
+        int number = scanner.nextInt();
+        
+        while (number != 0) {
+            int digit = number % 10;
+            System.out.print(digit + " ");
+            number /= 10;
+        }
+    }
+}
+
+
+/* 15. Write a program in Java that asks the user for an integer input, 
+ * and print the individual digits forward (From left to right).
+ * [You are not allowed to use Math.pow() to solve this problem.] */
+
+import java.util.Scanner;
+
+public class Task15 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter an integer: ");
+        int number = scanner.nextInt();
+        int count = 0;
+        int temp = number;
+        while (temp != 0) {
+            temp /= 10;
+            count++;
+        }
+        int divisor = 1;
+        for (int i = 1; i < count; i++) {
+            divisor *= 10;
+        }
+        for (int i = 0; i < count; i++) {
+            int digit = number / divisor;
+            System.out.print(digit + " ");
+            number %= divisor;
+            divisor /= 10;
+        }
+    }
+}
+
+
+/* 16. Write a Java program that will take an integer as input and - 
+a) Find out if the number is a prime number or not.
+b) Find out if the number is a perfect number or not. */
+
+import java.util.Scanner;
+
+public class Task16 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter an integer: ");
+        int number = scanner.nextInt();
+        boolean isPrime = true;
+        if (number <= 1) {
+            isPrime = false;
+        } else {
+            for (int i = 2; i <= Math.sqrt(number); i++) {
+                if (number % i == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+        }
+        if (isPrime) {
+            System.out.println(number + " is a prime number");
+        } else {
+            System.out.println(number + " is not a prime number");
+        }
+        int sumOfDivisors = 0;
+        for (int i = 1; i < number; i++) {
+            if (number % i == 0) {
+                sumOfDivisors += i;
+            }
+        }
+        if (sumOfDivisors == number) {
+            System.out.println(number + " is a perfect number");
+        } else {
+            System.out.println(number + " is not a perfect number");
+        }
+    }
+}

@@ -1,0 +1,249 @@
+/*Find out which of the following are legal identifiers in Java, and which are not. 
+Also, explain why the invalid ones are invalid. You can try to define each of these (items a to k below) 
+as a variable in the Dr java interaction pane and find out.
+The first one is done for you as an Example. If you want to define hungry, you have to try
+int hungry;
+
+a) hungry  b) 2AB c) 312.2 d) MOBILE  e) “Ans”  f) $30
+g) Yes/No  h) student-id      i) A+3  j) ‘X’  k) return 
+*/
+public class TASK10{
+  public static void main (String[]args){
+    /*It cannot be a Java reserved keyword
+     * start with a letter (a-z, A-Z), a dollar sign ($), or an underscore (_).
+     * remaining characters can be letters, digits (0-9), dollar signs ($), or underscores (_).
+     * cannot start with a digit
+       * can not start with or have any special character except dollar sign and underscore */
+    int hungry ; //valid start with letter 
+    int 2AB; // invalid - Starts with number
+    int 312.2 ; //invalid -starts with letter and there is a dot
+    int MOBILE ; //valid - All letters
+    int "Ans"; //invalid -starts with a special character
+    int $30; //valid - Start with dollar sign and then numbers
+    int Yes/No ; //invalid - there is a special character which is invalid
+    int student-id ; //invalid - there is a special character which is invalid
+    int A+3; //invalid - there is a plus sign which is not valid
+    int 'c'; //invalid - there is single quotes which is invalid
+    int return ; //invalid - Java keyword
+  
+  
+  }
+
+
+}
+
+
+
+//TASK11
+public class TASK11{
+     public static void main (String [] args){
+        int num1 = 5 ;//initialize an integer variable
+        System.out.println("Integer value=" +num1);
+        int num2 = 10; // //initialize the-second integer variable
+       int sum=num1+num2;
+       System.out.println("Addition of 2 number= "+sum); 
+       //product and division 2.2
+       int product=num1 * num2;
+       System.out.println("Product of 2 number = "+product);
+       int division = num1 / num2;
+       System.out.println("Division of two number= " + division); 
+      // change to Double variables
+     double num3 = 5.0; 
+     System.out.println("Data type Double (num1)= " + num3);
+     double num4 = 10.0; 
+     System.out.println("Data type Double (num2)= " + num4); 
+     // addition of two doubles
+     double sumDoubles = num3 + num4;
+     System.out.println("Addition of two doubles= " + sumDoubles); 
+      // product and Division of two doubles
+      double productDoubles = num3 * num4;
+      System.out.println("Product of two doubles " + productDoubles);
+       double divisionDoubles = num3 / num4;
+        System.out.println("Division of two doubles " + divisionDoubles);
+      //mixed data types-int and double
+      double mixedSum = num1 + num3; // adding integer and double
+      System.out.println("Addition of (int) and (double): " + mixedSum);
+      double mixedProduct = num1 * num3; // Multiplying integer and double
+      System.out.println("Product of (int) and (double): " + mixedProduct);
+       double mixedDivision = num1 / num3; 
+       System.out.println("Division of(int) by (double): " + mixedDivision);
+      //string-variables
+      String str1="Hello"; // initialize first string variable
+      String str2="World!"; // initialize second string variable
+      String concatenation = str1 + str2;
+      System.out.println("Concatenation of string1 and string2: " + concatenation); 
+      //addition with-one integer and one string
+      String mixedAdd = num1 + str1;
+      System.out.println("Adding number and string : " + mixedAdd);
+      String mixedAdd_reverse = str1 + num1;
+      System.out.println("Adding string  and number : " + mixedAdd_reverse);
+   }
+}
+//TASK 12
+/*Write Java code that calculates and prints the circumference and area of a circle with a radius of 4 units. 
+[Hint: use Math.PI to get the value of π] */
+public class lab_assign12{
+  	public static void main (String[]args){
+    	//circumference = 2*pi*r
+    	double r = 4.0;
+    	double circumference = 2*Math.PI*r;
+    	System.out.println ("circumference : "+ circumference);
+    	//area = pi *r^2 
+    	double area = Math.PI*r*r;
+    	System.out.println ("Area of the circle : "+ area);
+    }
+}
+
+TASK13
+/*Write a Java code where given an integer we need to print the last 2 digits of that number.
+* [Hint: Use the logic you used in one of the tasks in flowchart] */
+import java.util.Scanner;
+public class TASK13 {
+    public static void main (String[]args){
+    	Scanner sc = new Scanner (System.in);
+    	System.out.println ("Please Enter a Number");
+    	int num = sc.nextInt();
+    	num = num % 100 ;
+    	System.out.println("Last 2 digit of the number: "+num);
+   }
+}
+
+
+//TASK 14
+/*Write a Java program that given a number in inches (you have to declare and initialize it yourself) converts it to meters.
+ * Note: One inch is 0.0254 meters.
+Test Data:
+Given a value for inch: 1000
+Expected Output:
+1000 inch is 25.4 meters
+*/
+public class TASK14{
+    public static void main (String []args){
+    	// a number in inches (you have to declare and initialize it yourself)
+    	int num = 1000;
+    	//converts it to meters.
+    	double meter = num*0.0254 ;
+    	System.out.printf ("%d inch is %.2f meters\n", num , meter );  //formatted printing %d stands for printing int
+  }
+
+}
+
+
+//TASK 15
+/*Write a Java program declaring two integer variables and initializing them.
+ * Your task is to swap the values of these two variables.
+ * You must complete it using two different approaches.
+By Creating a third variable. 
+Without creating any other variables. */
+
+public class TASK15{
+    public static void main(String[] args) {
+        int num1 = 5;
+        int num2 = 7;
+        System.out.println("Before Swap:");
+        System.out.println("number1 = " + num1);
+        System.out.println("number2 = " + num2);
+        int c= num1; 
+        num1 = num2;      
+        num2 = c; 
+        System.out.println("After Swap:");
+        System.out.println("number1 = " + num1);
+        System.out.println("number2 = " + num2);
+        num1 = 5;
+        num2 = 7;
+        num1 = num1 + num2;
+        num2 = num1 - num2; 
+        num1 = num1 - num2; 
+        System.out.println("After Swap (Without Using Third Variable):");
+        System.out.println("num1 = " + num1);
+        System.out.print("num2 = " + num2);
+    }
+}
+
+
+
+//TASK16
+//Write a Java program to convert minutes into years and days.
+//For simplicity, assume each year consists of 365 days.
+
+public class TASK16{
+    public static void main(String[] args) {
+        int min = 3456789;
+        int min_InHour = 60;
+        int hours_InDay = 24;
+        int days_InYear = 365;
+        int total_days = min / (min_InHour * hours_InDay);
+        int years = total_days / days_InYear;
+        int remainingDays = total_days % days_InYear;
+        System.out.println(min + " minutes is approximately " + years + " years and " + remainingDays + " days.");
+    }
+}
+
+
+//TASK17
+/*Write a Java program based on this mentioned scenario that prints
+ * the value of d after calculation. [Answer: 27]
+*/
+
+public class TASK17 {
+    public static void main(String[] args) {
+        int a = 2, b = 5, c = 8;
+        int d = (2 * b * (c - a) / 3) + 7;
+        System.out.println("The value of d is: " + d);
+    }
+}
+
+//TASK 18
+/*Write a Java program that displays the 2 rightmost digits of your student ID in reverse order. 
+For example, if your student id is 23221454, you need to print 4, and then 5.
+[Hint: Use the logic you used in one of the tasks in flowchart] */
+public class TASK18 {
+    public static void main(String[] args) {
+        int studentId= 23221454;
+        int r = studentId /10; //2322145
+        int lastD = studentId%10; //4
+        System.out.print("The 2 rightmost digits of your student ID in reverse order: ");
+        System.out.print(lastD);
+        int r2= r/10;//232214
+        lastD = r%10;//5
+        System.out.println(lastD);
+      }
+} 
+
+
+//TASK 19
+/* write a Java code to find the area and the circumference of the Hexagon. 
+*/
+
+public class TASK19 {
+    public static void main(String[] args) {
+      double a = 8; // Side length
+      double area = (3 * Math.sqrt(3) / 2) * (a * a);
+      double circumference = 6 * a;
+      System.out.println( " Area of the Hexagon = " + area +" And Circumference  = " + circumference);
+    }
+    
+}
+
+//TASK20
+/*Design a Java program to calculate Sin and Cos values from a right-angled triangle. */
+public class TASK20 {
+    public static void main(String[] args) {
+        /* Given sides of the right-angled triangle */
+        double a = 4.5; // side a-(adjacent to angle A)
+        double b = 9.5; // side b-(opposite to angle A)
+        double c = Math.sqrt(a * a + b * b); //Pythagorean theorem
+        double sinA = b / c; // sin(A) = opposite / hypotenuse
+        double cosA = a / c; // cos(A) = adjacent / hypotenuse
+        double sinB = a / c; // sin(B) = opposite / hypotenuse
+        double cosB = b / c; // cos(B) = adjacent / hypotenuse
+        System.out.println("Given sides a = " + a+ " and b = " + b);
+        System.out.println("Hypotenuse (c) = " +c);
+        System.out.println("Sin(A)=" +sinA);
+        System.out.println("Cos(A)=" +cosA);
+        System.out.println("Sin(B)=" +sinB);
+        System.out.println("Cos(B)=" +cosB);
+        
+    }
+     
+}

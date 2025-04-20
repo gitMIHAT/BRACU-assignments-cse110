@@ -1,0 +1,302 @@
+/* Write the Java code of a program to find the largest among three numbers entered by the user. 
+ */
+import java.util.Scanner;
+public class task1{
+  public static void main (String[]args){
+    Scanner sc = new Scanner (System.in);
+    System.out.println("Please enter the first number:");
+    int num1 =  sc.nextInt();
+    System.out.println("Please enter the second number:");
+    int num2 = sc.nextInt();
+    System.out.println("Please enter the third number:");
+    int num3 = sc.nextInt();
+    if (num1>= num2 && num1 >= num3){
+      System.out.println(num1 + "is the largest number");
+    } else if(num2 >= num1 && num2 >= num3){
+       System.out.println(num2 + "is the largest number");
+    } else {
+       System.out.println(num3 + "is the largest number");
+    }     
+  }
+}
+
+
+/* Write a Java program that takes a student's numerical score as input as an integer and
+ * prints their corresponding letter grade according to the following grading system: 
+
+ */
+import java.util.Scanner;
+public class task2{
+  public static void main (String[]args){
+    Scanner sc = new Scanner (System.in);
+    System.out.println("Please enter the student's numerical score:");
+    int num1 =  sc.nextInt();
+    if (num1 >= 90) {
+            System.out.println("The student's grade is: A");
+        } else if (num1 >= 80) {
+            System.out.println("The student's grade is: B");
+        } else if (num1 >= 70) {
+            System.out.println("The student's grade is: C");
+        } else if (num1 >= 60) {
+            System.out.println("The student's grade is: D");
+        } else {
+            System.out.println("The student's grade is: F");
+        }
+  }
+}
+
+/*Write a Java code of a program that takes an integer number as user input and then 
+ * determines if that number is divisible by both 5 and 7; otherwise display “No”.
+ * For example, numbers like 35, 70, 105, 140, 175, 210, 245, 280 etc. can be divisible by both 5 and 7. 
+ */
+import java.util.Scanner;
+public class task3{
+  public static void main (String[]args){
+    Scanner sc = new Scanner (System.in);
+    System.out.println("Please enter an integer number:");
+    int num1 =  sc.nextInt();
+    if (num1 % 5 == 0 && num1 % 7 == 0) {
+            System.out.println("The number " + num1 + " is divisible by both 5 and 7.");
+        } else {
+            System.out.println("No");
+        }
+   }
+}
+
+/*Write a Java program that will take a year as input and print whether that year is a leap year or not.      
+A year may be a leap year if it is evenly divisible by 4.
+Years that are divisible by 100 (century years such as 1900 or 2100) 
+cannot be leap years unless they are also divisible by 400. 
+ */
+import java.util.Scanner;
+public class task4{
+  public static void main (String[]args){
+    Scanner sc = new Scanner (System.in);
+    System.out.println("Please enter a year:");
+    int num1 =  sc.nextInt();
+     if ((num1 % 4 == 0 && num1 % 100 != 0) || (num1 % 400 == 0)) {
+            System.out.println(num1 + " is a leap year.");
+        } else {
+            System.out.println(num1 + " is not a leap year.");
+        }
+   }
+}
+
+/* Write a program which asks the user to enter an integer. Then you have to check the input and
+ * based on that you have to print the following outputs. 
+ If the input is negative, then print “Number is negative”
+ If the input is zero, then print “Number is zero”
+ If the input is positive and even, then print “Number is positive and even”
+And if the input is positive and odd, then print “Number is positive and odd”
+ */
+import java.util.Scanner;
+public class task5{
+  public static void main (String[]args){
+    Scanner sc = new Scanner (System.in);
+    System.out.println("Please enter an integer:");
+    int num1 =  sc.nextInt();
+     if (num1 < 0) {
+            System.out.println("Number is negative");
+        } else if (num1 == 0) {
+            System.out.println("Number is zero");
+        } else if (num1 > 0 && num1 % 2 == 0) {
+            System.out.println("Number is positive and even");
+        } else {
+            System.out.println("Number is positive and odd");
+        }
+  }
+}
+
+/*Let’s consider the following piecewise function:
+Design a Java code of a program that takes the value of x as user input
+and then displays the output based on the given piecewise function.
+*/
+import java.util.Scanner;
+public class task6 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the value of x: ");
+        int x = scanner.nextInt();
+        int ans;
+        if (x < 0) {
+            ans = 2 * x;
+        } else if (x >= 0 && x < 2) {
+            ans = x + 1;
+        } else if (x >= 2 && x < 5) {
+            ans = (x * x) - 1;
+        } else {
+            ans = (3 * x * x) + 2;
+        }
+        System.out.println("Output: " + ans);
+    }
+}
+
+
+
+/* Write the Java code of a program that calculates the tax and prints it as follows:
+a)  No tax if you get paid less than 10,000
+b) 5% tax if you get paid between 10,000 and 20,000 (both inclusive)
+c) 10% tax if you get paid more than 20,000
+d) NO TAX IF YOU ARE LESS THAN 18 YEARS OLD.
+Hint: Take payment and age as user as inputs; then calculate tax and print it. 
+
+ */
+import java.util.Scanner;
+public class TASK7{
+  public static void main (String[]args){
+    Scanner sc = new Scanner (System.in);
+    System.out.println("Please enter your age:");
+    int age =  sc.nextInt();
+     if (age < 18) {
+            System.out.println("No tax as you are less than 18 years old.");
+        } else {
+            System.out.print("Please enter your salary: ");
+            double salary = sc.nextDouble();
+            if (salary < 10000) {
+                System.out.println("No tax as your salary is less than 10,000.");
+            } else if (salary >= 10000 && salary <= 20000) {
+                double tax = salary * 0.05; // 5% tax
+                System.out.println("Your tax is: " + tax);
+            } else {
+                double tax = salary * 0.10; // 10% tax
+                System.out.println("Your tax is: " + tax);
+            }
+        }
+  }
+}
+
+/* Write a Java program that takes 3 float numbers as input from the user and
+ * prints the maximum and minimum number from the inputs.
+ */
+import java.util.Scanner;
+public class task8{
+  public static void main (String[]args){
+    Scanner sc = new Scanner(System.in);
+        System.out.println("Please enter the first number:");
+        float num1 = sc.nextFloat();
+        System.out.println("Please enter the second number:");
+        float num2 = sc.nextFloat();
+        System.out.println("Please enter the third number:");
+        float num3 = sc.nextFloat();
+        float max = num1;
+        if (num2 > max) {
+            max = num2;
+        }
+        if (num3 > max) {
+            max = num3;
+        }
+        float min = num1;
+        if (num2 < min) {
+            min = num2;
+        }
+        if (num3 < min) {
+            min = num3;
+        }
+        System.out.println("The maximum number is: " + max);
+        System.out.println("The minimum number is: " + min);
+  }
+}
+
+/* A triangle has 3 sides. Write a program which asks the users for input. Based on the input,
+ * your program should output whether it is an Equilateral, Isosceles or Scalene. 
+ * Equilateral triangle has three sides with equal length 
+ * Isosceles triangle has two sides with equal length and another side is different
+ * Scalene triangle has different lengths in each side
+ */
+import java.util.Scanner;
+public class task9{
+  public static void main (String[]args){
+    Scanner sc = new Scanner(System.in);
+      System.out.println("Please enter the length of the first side:");
+        float side1 = sc.nextFloat();
+        System.out.println("Please enter the length of the second side:");
+        float side2 = sc.nextFloat();
+        System.out.println("Please enter the length of the third side:");
+        float side3 = sc.nextFloat();
+        if (side1 <= 0 || side2 <= 0 || side3 <= 0) {
+            System.out.println("Invalid input. Side lengths should be positive.");
+        } else if (side1 == side2 && side2 == side3) {
+            System.out.println("The triangle is Equilateral.");
+        } else if (side1 == side2 || side2 == side3 || side1 == side3) {
+            System.out.println("The triangle is Isosceles.");
+        } else {
+            System.out.println("The triangle is Scalene.");
+        }
+  }
+}
+
+/*Suppose you are hired by Swapno. Now, your task is to create a Java program that will help the cashier calculate the change to be returned.
+The program takes two inputs. First input is an integer number which is the amount of money to be paid in taka and
+the second integer is the amount of money the customer gave to the cashier. Your program should print the following:
+
+If the customer gave more money than the actual amount, print change the cashier should return in notes and coins.
+If the customer gave less money than the amount to be paid, then print the amount the customer needs to pay. 
+
+Consider the following denomination for notes and coins in taka:
+Notes: 100, 50, 20, 10. 
+Coins: 5, 2, 1.
+
+ */
+import java.util.Scanner;
+public class task10{
+  public static void main (String[]args){
+    Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the amount to be paid in taka:");
+        int amountToPay = sc.nextInt();
+        System.out.println("Enter the amount given by the customer in taka:");
+        int amountGiven = sc.nextInt();
+        if (amountGiven < amountToPay) {
+            int remainingAmount = amountToPay - amountGiven;
+            System.out.println("The customer needs to pay: " + remainingAmount + " taka");
+        } 
+        else if (amountGiven > amountToPay) {
+            int change = amountGiven - amountToPay;
+            System.out.println("Change to be returned: " + change + " taka");
+            int[] notes = {100, 50, 20, 10}; // Notes available
+            int[] coins = {5, 2, 1}; // Coins available
+            for (int note : notes) {
+                if (change >= note) {
+                    int count = change / note;
+                    change %= note; // Update the remaining change
+                    System.out.println(count + " x " + note + " taka note(s)");
+                }
+            }
+            for (int coin : coins) {
+                if (change >= coin) {
+                    int count = change / coin;
+                    change %= coin; // Update the remaining change
+                    System.out.println(count + " x " + coin + " taka coin(s)");
+                }
+            }
+        } 
+        else {
+            System.out.println("No change is needed.");
+        }
+  }
+}
+
+
+
+/*Write a Java program that reads three numbers and prints "All numbers are equal"
+ * if all three numbers are equal, "All numbers are different" if all three numbers are different
+ * and "Neither all are equal nor different" otherwise.
+ */
+import java.util.Scanner;
+public class task11{
+  public static void main (String[]args){
+    Scanner sc = new Scanner(System.in);
+      System.out.println("Please enter the first number:");
+        int num1 = sc.nextInt();      
+        System.out.println("Please enter the second number:");
+        int num2 = sc.nextInt();  
+        System.out.println("Please enter the third number:");
+        int num3 = sc.nextInt();
+        if (num1 == num2 && num2 == num3) {
+            System.out.println("All numbers are equal");
+        } else if (num1 != num2 && num1 != num3 && num2 != num3) {
+            System.out.println("All numbers are different");
+        } else {
+            System.out.println("Neither all are equal nor different");
+        }
+  }
+}
