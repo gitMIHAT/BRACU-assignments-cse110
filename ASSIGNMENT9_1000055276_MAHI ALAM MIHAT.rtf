@@ -1,0 +1,155 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 //TASK1\
+import java.util.Scanner;\
+\
+public class mihat\{\
+    public static void main(String []args)\
+    \{\
+        Scanner sc =new Scanner (System.in);\
+        int N = sc.nextInt();\
+        oneToN(1,N);\
+    \}\
+    public static int  oneToN(int a,int b)\
+    \{\
+        if (b==0)\
+        \{\
+            return 0;\
+        \}\
+        else\{\
+            System.out.print(b);\
+            return oneToN(a,b-a);\
+        \}\
+    \}\
+\}\
+\
+//TASK2\
+import java.util.Scanner;\
+\
+public class mihat\{\
+    public static void main(String []args)\
+    \{\
+        Scanner sc =new Scanner (System.in);\
+        int N= sc.nextInt();//12345\
+        reverseDigits(N);\
+    \}\
+    public static int reverseDigits (int n)\
+    \{\
+        if (n<=0)\
+        \{\
+            return 0;\
+        \}\
+        else\{\
+            int last = n%10;\
+            System.out.println(last);\
+            return reverseDigits( n/10);\
+        \}\
+    \}\
+\}\
+\
+\
+//TASK3\
+import java.util.Scanner;\
+\
+public class mihat\{\
+    public static void main(String []args)\
+    \{\
+        Scanner sc =new Scanner (System.in);\
+        int n= sc.nextInt();//12345\
+        int x = sumDigits(n);\
+        System.out.println(x);\
+\
+    \}\
+    public static int sumDigits (int n)\
+    \{\
+        if (n<=0)\
+        \{\
+            return 0;\
+        \}\
+        else\{\
+            int last = n%10;\
+            return last + sumDigits(n/10);\
+        \}\
+    \}\
+\}\
+\
+\
+\
+//TASK4\
+import java.util.Scanner;\
+\
+public class mihat\{\
+    public static void main(String []args)\
+    \{\
+        Scanner sc =new Scanner (System.in);\
+        int N= sc.nextInt();\
+        int x =factorial(N);\
+        System.out.print(x);\
+    \}\
+    public static int factorial (int a)\
+    \{\
+        if (a==1)\
+        \{\
+            return 1;\
+        \}\
+        else\{\
+            return a*factorial(a-1);\
+        \}\
+    \}\
+\}\
+\
+\
+\
+//TASK6\
+import java.util.Scanner;\
+\
+public class mihat\{\
+    public static void main(String []args)\
+    \{\
+        Scanner sc =new Scanner (System.in);\
+        int n= sc.nextInt();//5\
+        int m= sc.nextInt();//3\
+        int x = power(n,m);\
+        System.out.println(x);\
+    \}\
+    public static int power(int n,int m) \
+    \{\
+        if (m<=0)\
+        \{\
+            return 1;\
+        \}\
+        else\{\
+            return n* power(n ,m-1); \
+        \}\
+    \}\
+\}\
+\
+\
+//TASK8\
+import java.util.Scanner;\
+\
+public class mihat\{\
+    public static void main(String []args)\
+    \{\
+        Scanner sc =new Scanner (System.in);\
+        int N= sc.nextInt();\
+        int x =fibonacci(N);\
+        System.out.print(x);\
+    \}\
+    public static int fibonacci (int n)\
+    \{\
+        if (n<=1)\
+        \{\
+            return n;\
+        \}\
+        else\{\
+            return fibonacci(n-1) + fibonacci(n-2);\
+        \}\
+    \}\
+\}\
+}
