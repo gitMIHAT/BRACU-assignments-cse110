@@ -1,0 +1,269 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 HelveticaNeue;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww28600\viewh18000\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 //TASK1\
+import java.util.Scanner;\
+public class NumberChecker \
+\{\
+    public static void evenChecker(int number) \
+    \{\
+        if (number % 2 == 0) \
+        \{\
+            System.out.println("Even!!");\
+        \} else \{\
+            System.out.println("Odd!!");\
+        \}\
+    \}\
+    public static boolean isEven(int number) \
+    \{\
+        return number % 2 == 0;\
+    \}\
+    public static boolean isPos(int number) \
+    \{\
+        return number > 0;\
+    \}\
+    public static void sequence(int n) \
+    \{\
+        if (isPos(n)) \
+        \{\
+            for (int i = 0; i <= n; i++) \
+            \{\
+                if (isEven(i)) \
+                \{\
+                    System.out.print(i + " ");\
+                \}\
+            \}\
+        \} \
+        else \
+        \{\
+            for (int i = n; i < 0; i++) \{\
+                \
+                if (!isEven(i)) \
+                \{\
+                    System.out.print(i + " ");\
+                \}\
+            \}\
+        \}\
+        System.out.println(); \
+    \}\
+    public static void main(String[] args) \
+    \{\
+        Scanner sc =new Scanner(System.in);\
+        int ec= sc.nextInt();\
+        evenChecker(ec);\
+        int iE= sc.nextInt();\
+        boolean result = isEven(iE);\
+        System.out.println(result);\
+        int iP= sc.nextInt();\
+        boolean result1 = isPos(iP);\
+        System.out.println( result1); \
+        int sQ= sc.nextInt();\
+        sequence(sQ); \
+    \}\
+\}\
+\
+\
+//task2\
+import java.util.Scanner;\
+public class Mihat \{\
+    public static double circleArea(int c) \{\
+        return 3.1416 * c * c;\
+    \}\
+    public static double sphereVolume(double s) \{\
+        return (4.0 / 3) * Math.PI * (s * s * s);\
+    \}\
+    public static void findSpace(double a, String b) \{\
+        if (b.equals("circle")) \{\
+            System.out.println("Circle Area: " + circleArea((int) a));\
+        \} else if (b.equals("sphere")) \{\
+            System.out.println("Sphere Volume: " + sphereVolume(a));\
+        \} else \{\
+            System.out.println("Invalid shape!");\
+        \}\
+    \}\
+    public static void main(String[] args) \{\
+        Scanner sc = new Scanner(System.in);\
+        int n = sc.nextInt();\
+        double area = circleArea(n);\
+        System.out.println("Area: " + area);\
+        double n2 = sc.nextDouble();\
+        double volume = sphereVolume(n2);\
+        System.out.println("Volume: " + volume);\
+        System.out.println("FIND SPACE:");\
+        double input = sc.nextDouble();\
+        sc.nextLine(); \
+        String what = sc.nextLine();\
+\
+        findSpace(input, what);\
+    \}\
+\}\
+\
+\
+\
+\
+//task3\
+import java.util.Scanner;\
+public class mihat \{\
+    public static boolean isTtriangle(int a, int b, int c) \{\
+        return (a + b > c && b + c > a && c + a > b);\
+    \}\
+    public static void triArea(int a, int b, int c) \{\
+        if (isTtriangle(a, b, c)) \{\
+            double s = (a + b + c) / 2.0;\
+            double area = Math.sqrt(s * (s - a) * (s - b) * (s - c));\
+            System.out.printf("Area: %.2f\\n", area);\
+        \} else \{\
+            System.out.printf("Can't form a triangle" ); \
+        \}\
+    \}\
+    public static void main(String[] args) \{\
+        Scanner sc =new Scanner (System.in);\
+        System.out.println("Enter a,b,c of triangle:");\
+        int a =sc.nextInt();\
+        int b =sc.nextInt();\
+        int c =sc.nextInt();\
+        boolean res = isTtriangle(a,b,c);\
+        System.out.println( res );\
+        //triArea(1, 2, 3); //NV\
+        triArea(a,b,c);\
+        //triArea(7,5,10);\
+    \}\
+\}\
+\
+\
+\
+\
+//task4\
+import java.util.Scanner;\
+public class mihat \{\
+    public static boolean isPrime(int a) \{\
+        if (a <= 1) return false;\
+        for (int i = 2; i <= Math.sqrt(a); i++) \{\
+            if (a % i == 0) return false;\
+        \}\
+        return true;\
+    \}\
+    public static boolean isPerfect(int a) \{\
+        int sum = 0;\
+        for (int i = 1; i < a; i++) \{\
+            if (a % i == 0) \{\
+                sum += i;\
+            \}\
+        \}\
+        return sum == a;\
+    \}\
+    public static void special_sum(int n) \{\
+        int sum = 0;\
+        for (int i = 1; i <= n; i++) \{\
+            if (isPrime(i) || isPerfect(i)) \{\
+                sum += i;\
+            \}\
+        \}\
+        System.out.println("Special Sum: " + sum);\
+    \}\
+    public static void main(String[] args) \{\
+        Scanner sc = new Scanner(System.in);\
+        System.out.print("Enter a number: ");\
+        int num = sc.nextInt();\
+        boolean check = isPrime(num);\
+        System.out.println(check);\
+        check = isPerfect(num);\
+        System.out.println(check);        \
+        special_sum(num);\
+    \}\
+\}\
+\
+\
+\
+\
+//task5\
+import java.util.Scanner;\
+public class mihat \{\
+    public static void showDots(int n) \{\
+        for (int i = 0; i < n; i++) \{\
+            System.out.print(".");\
+        \}\
+    \}\
+    public static void show_palindrome(int n) \{\
+        for (int i = 1; i <= n; i++) \{\
+            System.out.print(i);\
+        \}\
+        for (int i = n - 1; i >= 1; i--) \{\
+            System.out.print(i);\
+        \}\
+    \}\
+    public static void showDiamond(int n) \{\
+        for (int i = 1; i <= n; i++) \{\
+            showDots(n - i);\
+            show_palindrome(i);\
+            showDots(n-i);\
+            System.out.println();\
+        \}\
+        for (int i = n - 1; i >= 1; i--) \{\
+            showDots(n - i);\
+            show_palindrome(i);\
+            showDots(n-i);\
+            System.out.println();\
+        \}\
+    \}\
+    public static void main(String[] args) \{\
+        Scanner sc = new Scanner(System.in);\
+        System.out.print("Enter N: ");\
+        int n = sc.nextInt();\
+        //showDots(n);\
+        //show_palindrome(n);        \
+        showDiamond(n);\
+    \}\
+\}\
+\
+\
+\
+\
+//TASK6\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+
+\f1\fs26 \cf0 import java.util.Scanner;\
+public class Assignment6 \{\
+    public static double calcTax(int a, double b) \{\
+        if (a < 18 || b < 10000) \{\
+            return 0;\
+        \} else \{ \
+            if (b >= 10000 && b <= 20000) \{\
+                double tax = (b * 7) / 100; // 7% tax\
+                return tax;\
+            \} \
+            else if (b > 20000) \{\
+                double tax = (b * 14) / 100; // 14% tax\
+                return tax;\
+            \}\
+        \}\
+        return 0; \
+    \}\
+     public static void calcYearlyTax() \
+     \{\
+        Scanner scanner = new Scanner(System.in);\
+        System.out.print("Enter your age: ");\
+        int x = scanner.nextInt();\
+        double totalTax = 0;\
+        for (int month = 1; month <= 12; month++) \{\
+            System.out.print("Enter your income for month " + month + ": ");\
+            double in = scanner.nextDouble();\
+            double monthlyTax = calcTax(x, in);\
+            System.out.println("Tax for month " + month + ": " + monthlyTax);\
+            totalTax += monthlyTax;\
+        \}\
+        System.out.println("Total Tax for the year: " + totalTax);\
+    \}\
+    \
+    public static void main(String[] args) \{\
+        calcYearlyTax();\
+    \}\
+\}\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \
+}
